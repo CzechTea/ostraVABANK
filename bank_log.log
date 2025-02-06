@@ -1,0 +1,11 @@
+2025-02-06 17:53:00,593 - INFO - Spouští se server
+2025-02-06 17:53:03,018 - INFO - Spouští se server
+2025-02-06 17:53:20,266 - INFO - Spouští se server
+2025-02-06 17:53:20,266 - INFO - Server naslouchá na 192.168.1.23:65525
+2025-02-06 17:53:56,258 - INFO - Připojen klient: ('192.168.1.23', 50738)
+2025-02-06 17:54:08,994 - INFO - Připojen klient: ('192.168.1.23', 50746)
+2025-02-06 17:54:10,117 - INFO - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50746)> použil příkaz: AC -> Odpověď: AC 10000/192.168.1.23
+2025-02-06 17:54:11,552 - INFO - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50738)> použil příkaz: AC -> Odpověď: AC 10001/192.168.1.23
+2025-02-06 17:54:14,992 - INFO - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50746)> použil příkaz: AD -> Odpověď: ER Neznámý příkaz
+2025-02-06 17:54:17,876 - INFO - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50746)> použil příkaz: AD -> Odpověď: ER Neznámý příkaz
+2025-02-06 17:54:19,515 - INFO - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50738)> použil příkaz: AD -> Odpověď: ER Neznámý příkaz

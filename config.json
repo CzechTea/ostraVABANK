@@ -1,0 +1,6 @@
+{
+    "SERVER": "localhost",
+    "DATABASE": "ostraVABANK",
+    "USERNAME": "sa",
+    "PASSWORD": "student"
+}
