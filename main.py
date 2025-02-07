@@ -1,11 +1,14 @@
 import subprocess
 import sys
+import logging
+import socket
+import json
 
+from threading import Thread
 
-required_packages = ["socket","pyodbc", "threading", "logging", "json"]
-
+# Instalce chybějících balíčků, primarně pyodbc
+required_packages = ["pyodbc"]
 def install_missing_packages(packages):
-    # Check whenever a package is properly installed.
     for package in packages:
         try:
             __import__(package)
@@ -15,50 +18,38 @@ def install_missing_packages(packages):
 
 install_missing_packages(required_packages)
 
-import logging, socket, json, pyodbc
-from threading import Thread
+import pyodbc
 
-def start_server():
-    try:
-        logging.info("Spouští se server...")
-        server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server.bind((HOST, PORT))
-        server.listen(5)
-        get_db_connection()
-        logging.info(f"Server naslouchá na {HOST}:{PORT}")
-    except Exception as e:
-        logging.error(f"Chyba při spouštění serveru: {str(e)}")
-
-    print("Bankovní systém ostraVABANK úspěšně spuštěn")
-    print(f"Server naslouchá na {HOST}:{PORT}")
-    while True:
-        client_socket, addr = server.accept()
-        logging.info(f"Připojen klient: {addr}")
-        Thread(target=handle_client, args=(client_socket,addr)).start()
-
-# Logging Configuration
+# Konfigurace Loggování
 logging.basicConfig(
     filename="bank_log.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
+# Načtení databázeové konfigurace "config.json"
 with open("config.json") as f:
     DB_CONFIG = json.load(f)
 
-# Function to establish database connection
+# Připojení k databázi
 def get_db_connection():
     conn_str = f"DRIVER={{SQL Server}};SERVER={DB_CONFIG['SERVER']};DATABASE={DB_CONFIG['DATABASE']};UID={DB_CONFIG['USERNAME']};PWD={DB_CONFIG['PASSWORD']}"
-    return pyodbc.connect(conn_str)
+    try:
+        return pyodbc.connect(conn_str)
+    except pyodbc.Error as e:
+        logging.error(f"Chyba s připojením databáze: {e}")
+        return None
 
-# Server Configuration
-HOST = "192.168.1.23"
-PORT = 65525
+# Server Config
+HOST = "192.168.2.3"
+PORT = 65432
 TIMEOUT = 120
 
-# Function to execute SQL queries
+# SQL Query
 def execute_query(query, params=(), fetch=False):
     conn = get_db_connection()
+    if conn is None:
+        return None
     cursor = conn.cursor()
     cursor.execute(query, params)
     if fetch:
@@ -68,31 +59,31 @@ def execute_query(query, params=(), fetch=False):
     conn.commit()
     conn.close()
 
-# Command Handler
+# Handlování příkazů od klienta
 def handle_command(command, client_socket, client_ip):
     try:
         parts = command.strip().split()
-        response = parts[0].upper()
+        if not parts:
+            response = "ER Neznámý příkaz."
+        else:
+            response = parts[0].upper()
 
         if response == "BC":
             ip = client_socket.getsockname()[0]
             response = f"BC {ip}"
 
         elif response == "AC":
-            # Create a new account with an auto-incremented account number
             last_account = execute_query("SELECT MAX(account_number) FROM Accounts", fetch=True)
             account_number = (last_account[0][0] + 1) if last_account[0][0] else 10000
             execute_query("INSERT INTO Accounts (account_number, balance) VALUES (?, 0)", (account_number,))
             response = f"AC {account_number}/{HOST}"
 
-        elif response == "AD":
-            # Deposit money
+        elif response == "AD" and len(parts) >= 3:
             account, amount = int(parts[1].split('/')[0]), int(parts[2])
             execute_query("UPDATE Accounts SET balance = balance + ? WHERE account_number = ?", (amount, account))
             response = "AD"
 
-        elif response == "AW":
-            # Withdraw money
+        elif response == "AW" and len(parts) >= 3:
             account, amount = int(parts[1].split('/')[0]), int(parts[2])
             balance = execute_query("SELECT balance FROM Accounts WHERE account_number = ?", (account,), fetch=True)
             if balance and balance[0][0] >= amount:
@@ -101,29 +92,16 @@ def handle_command(command, client_socket, client_ip):
             else:
                 response = "ER Nedostatek prostředků nebo účet neexistuje."
 
-        elif response == "AB":
-            # Get account balance
+        elif response == "AB" and len(parts) >= 2:
             account = int(parts[1].split('/')[0])
             balance = execute_query("SELECT balance FROM Accounts WHERE account_number = ?", (account,), fetch=True)
             response = f"AB {balance[0][0]}" if balance else "ER Účet neexistuje."
 
-        elif response == "AR":
-            # Delete account if balance is 0
-            account = int(parts[1].split('/')[0])
-            balance = execute_query("SELECT balance FROM Accounts WHERE account_number = ?", (account,), fetch=True)
-            if balance and balance[0][0] == 0:
-                execute_query("DELETE FROM Accounts WHERE account_number = ?", (account,))
-                response = "AR"
-            else:
-                response = "ER Účet nelze smazat, zůstatek není nulový."
-
         elif response == "BA":
-            # Get total balance of all accounts
             total = execute_query("SELECT SUM(balance) FROM Accounts", fetch=True)
             response = f"BA {total[0][0] if total[0][0] else 0}"
 
         elif response == "BN":
-            # Get number of accounts
             count = execute_query("SELECT COUNT(*) FROM Accounts", fetch=True)
             response = f"BN {count[0][0]}"
 
@@ -131,29 +109,47 @@ def handle_command(command, client_socket, client_ip):
             response = "ER Neznámý příkaz."
 
     except Exception as e:
-        response = "ER Meznámý příkaz."
+        response = "ER Neznámý příkaz."
         logging.error(f"Chyba: {str(e)}")
 
-    # Send response to client
     client_socket.send(response.encode("utf-8"))
     logging.info(f"{client_ip} použil příkaz: {command.strip()} -> Odpověď zní: {response}")
 
-# Client Handler
-def handle_client(client_socket, client_ip):
+# Proces klienta
+def handle_client(client_socket, client_addr):
     try:
         client_socket.settimeout(TIMEOUT)
         while True:
             data = client_socket.recv(1024).decode("utf-8")
+            print(data)
             if not data:
                 break
-            handle_command(data, client_socket, client_ip)
+            handle_command(data, client_socket, client_addr[0])
     except Exception as e:
-        logging.warning(f"Chyba při komunikaci s klientem {client_ip}: {str(e)}")
+        logging.warning(f"Chyba při komunikaci s klientem {client_addr[0]}: {str(e)}")
     finally:
         client_socket.close()
+        print(f"Spojení s {client_addr[0]} ukončen." )
 
-# Start Server
+# Spuštění serveru
+def start_server():
+    logging.info("Spouští se server...")
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    server.bind((HOST, PORT))
+    server.listen(5)
+    print("Vítejte v systému ostraVABANK")
+    print(f"Server naslouchá na {HOST}:{PORT}")
+    logging.info(f"Server naslouchá na {HOST}:{PORT}")
+
+    while True:
+        client_socket, addr = server.accept()
+        logging.info(f"Připojen klient: {addr}")
+        print(f"Nový klient: {addr}")
+        # Každý klient má svoje vlákno.
+        Thread(target=handle_client, args=(client_socket, addr)).start()
 
 
+# nesahat, díky
 if __name__ == "__main__":
     start_server()

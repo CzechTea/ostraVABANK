@@ -9,3 +9,71 @@
 2025-02-06 17:54:14,992 - INFO - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50746)> pouЕѕil pЕ™Г­kaz: AD -> OdpovД›ДЏ: ER NeznГЎmГЅ pЕ™Г­kaz
 2025-02-06 17:54:17,876 - INFO - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50746)> pouЕѕil pЕ™Г­kaz: AD -> OdpovД›ДЏ: ER NeznГЎmГЅ pЕ™Г­kaz
 2025-02-06 17:54:19,515 - INFO - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50738)> pouЕѕil pЕ™Г­kaz: AD -> OdpovД›ДЏ: ER NeznГЎmГЅ pЕ™Г­kaz
+2025-02-07 14:38:23,950 - INFO - SpouпїЅtпїЅ se server...
+2025-02-07 14:38:23,951 - ERROR - Chyba pпїЅi spouпїЅtпїЅnпїЅ serveru: [WinError 10049] PoпїЅadovanпїЅ adresa nenпїЅ v tomto kontextu platnпїЅ
+2025-02-07 14:44:32,513 - INFO - SpouпїЅtпїЅ se server...
+2025-02-07 14:44:32,514 - ERROR - Chyba pпїЅi spouпїЅtпїЅnпїЅ serveru: [WinError 10049] PoпїЅadovanпїЅ adresa nenпїЅ v tomto kontextu platnпїЅ
+2025-02-07 14:48:05,430 - INFO - SpouпїЅtпїЅ se server...
+2025-02-07 14:48:05,432 - ERROR - Chyba pпїЅi spouпїЅtпїЅnпїЅ serveru: [WinError 10049] PoпїЅadovanпїЅ adresa nenпїЅ v tomto kontextu platnпїЅ
+2025-02-07 14:54:22,589 - INFO - SpouпїЅtпїЅ se server...
+2025-02-07 14:54:44,656 - INFO - SpouпїЅtпїЅ se server...
+2025-02-07 14:55:03,155 - ERROR - Chyba pпїЅi spouпїЅtпїЅnпїЅ serveru: ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server neexistuje nebo byl odepпїЅen pпїЅпїЅstup. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+2025-02-07 14:55:30,646 - INFO - PпїЅipojen klient: ('127.0.0.1', 59431)
+2025-02-07 14:55:30,660 - INFO - ('127.0.0.1', 59431) pouпїЅil pпїЅпїЅkaz: SSH-2.0-PuTTY_Release_0.82 -> OdpovпїЅпїЅ znпїЅ: ER NeznпїЅmпїЅ pпїЅпїЅkaz.
+2025-02-07 14:56:59,148 - INFO - SpouпїЅtпїЅ se server...
+2025-02-07 14:57:00,959 - INFO - Server naslouchпїЅ na 0.0.0.0:65525
+2025-02-07 14:57:19,818 - INFO - PпїЅipojen klient: ('127.0.0.1', 59443)
+2025-02-07 14:57:19,829 - INFO - ('127.0.0.1', 59443) pouпїЅil pпїЅпїЅkaz: SSH-2.0-PuTTY_Release_0.82 -> OdpovпїЅпїЅ znпїЅ: ER NeznпїЅmпїЅ pпїЅпїЅkaz.
+2025-02-07 15:02:22,237 - INFO - Spouљtн se server...
+2025-02-07 15:02:24,451 - INFO - Server naslouchб na 0.0.0.0:65525
+2025-02-07 15:03:54,380 - INFO - Spouљtн se server...
+2025-02-07 15:03:55,536 - INFO - Server naslouchб na 192.168.2.3:65530
+2025-02-07 15:04:10,269 - INFO - Pшipojen klient: ('192.168.2.3', 59484)
+2025-02-07 15:04:10,281 - INFO - ('192.168.2.3', 59484) pouћil pшнkaz: SSH-2.0-PuTTY_Release_0.82 -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:06:10,287 - WARNING - Chyba pшi komunikaci s klientem ('192.168.2.3', 59484): timed out
+2025-02-07 15:20:00,470 - INFO - Server naslouchб na 192.168.2.3:65432
+2025-02-07 15:20:34,654 - INFO - Server naslouchб na 192.168.2.3:65432
+2025-02-07 15:20:40,073 - INFO - Server naslouchб na 192.168.2.3:65432
+2025-02-07 15:21:04,219 - INFO - Server naslouchб na 192.168.2.3:65432
+2025-02-07 15:23:01,806 - INFO - Server naslouchб na 192.168.2.3:65432
+2025-02-07 15:23:35,440 - INFO - Server naslouchб na 192.168.2.3:65432
+2025-02-07 15:25:05,782 - INFO - Spouљtн se server...
+2025-02-07 15:25:05,783 - INFO - Server naslouchб na 192.168.2.3:65432
+2025-02-07 15:25:20,370 - INFO - Spouљtн se server...
+2025-02-07 15:25:20,371 - INFO - Server naslouchб na 192.168.2.3:65432
+2025-02-07 15:25:44,275 - INFO - Pшipojen klient: ('192.168.2.3', 59565)
+2025-02-07 15:25:44,288 - INFO - 192.168.2.3 pouћil pшнkaz: SSH-2.0-PuTTY_Release_0.82 -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:28:16,653 - INFO - Spouљtн se server...
+2025-02-07 15:28:16,654 - INFO - Server naslouchб na 192.168.2.3:65432
+2025-02-07 15:28:45,453 - INFO - Pшipojen klient: ('192.168.2.3', 59602)
+2025-02-07 15:28:45,464 - INFO - 192.168.2.3 pouћil pшнkaz: SSH-2.0-PuTTY_Release_0.82 -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:39:36,347 - INFO - Spouљtн se server...
+2025-02-07 15:39:36,349 - INFO - Server naslouchб na 192.168.2.3:65432
+2025-02-07 15:40:02,360 - INFO - Pшipojen klient: ('192.168.2.3', 59683)
+2025-02-07 15:40:11,654 - WARNING - 192.168.2.3 pouћil pшнkaz: BC -> Odpovмп znн: BC 192.168.2.3
+2025-02-07 15:40:11,655 - WARNING - 192.168.2.3 pouћil pшнkaz:  -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:40:18,909 - WARNING - 192.168.2.3 pouћil pшнkaz: B -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:40:18,910 - WARNING - 192.168.2.3 pouћil pшнkaz: C -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:40:21,467 - WARNING - 192.168.2.3 pouћil pшнkaz:  -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:40:22,109 - WARNING - 192.168.2.3 pouћil pшнkaz:  -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:40:23,105 - WARNING - 192.168.2.3 pouћil pшнkaz: B -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:40:23,106 - WARNING - 192.168.2.3 pouћil pшнkaz: C -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:40:27,401 - WARNING - 192.168.2.3 pouћil pшнkaz: B -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:40:27,402 - WARNING - 192.168.2.3 pouћil pшнkaz: C -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:51:56,883 - INFO - Spouљtн se server...
+2025-02-07 15:51:56,884 - INFO - Server naslouchб na 192.168.2.3:65432
+2025-02-07 15:52:06,428 - INFO - Pшipojen klient: ('192.168.2.3', 59717)
+2025-02-07 15:52:10,825 - WARNING - 192.168.2.3 pouћil pшнkaz: A -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:10,825 - WARNING - 192.168.2.3 pouћil pшнkaz: C -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:12,730 - WARNING - 192.168.2.3 pouћil pшнkaz:  -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:15,158 - WARNING - 192.168.2.3 pouћil pшнkaz: A -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:15,158 - WARNING - 192.168.2.3 pouћil pшнkaz: C -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:15,982 - WARNING - 192.168.2.3 pouћil pшнkaz: A -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:15,982 - WARNING - 192.168.2.3 pouћil pшнkaz: C -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:16,516 - WARNING - 192.168.2.3 pouћil pшнkaz: C -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:16,516 - WARNING - 192.168.2.3 pouћil pшнkaz: A -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:17,639 - WARNING - 192.168.2.3 pouћil pшнkaz: c -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:19,970 - ERROR - Chyba: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Cannot insert explicit value for identity column in table 'Accounts' when IDENTITY_INSERT is set to OFF. (544) (SQLExecDirectW)")
+2025-02-07 15:52:20,051 - WARNING - 192.168.2.3 pouћil pшнkaz: ac -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:24,044 - WARNING - 192.168.2.3 pouћil pшнkaz: B -> Odpovмп znн: ER Neznбmэ pшнkaz.
+2025-02-07 15:52:24,045 - WARNING - 192.168.2.3 pouћil pшнkaz: C -> Odpovмп znн: ER Neznбmэ pшнkaz.
