@@ -32,9 +32,9 @@ def start_server():
     print("Bankovní systém ostraVABANK úspěšně spuštěn")
     print(f"Server naslouchá na {HOST}:{PORT}")
     while True:
-        client_socket, client_ip = server.accept()
-        logging.info(f"Připojen klient: {client_ip}")
-        Thread(target=handle_client, args=(client_socket,client_ip)).start()
+        client_socket, addr = server.accept()
+        logging.info(f"Připojen klient: {addr}")
+        Thread(target=handle_client, args=(client_socket,addr)).start()
 
 # Logging Configuration
 logging.basicConfig(
