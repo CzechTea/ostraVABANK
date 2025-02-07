@@ -46,7 +46,7 @@ def get_db_connection():
 # Server Config
 HOST = IP_CONFIG["HOST"]
 PORT = IP_CONFIG["PORT"]
-TIMEOUT = 5
+TIMEOUT = IP_CONFIG["TIMEOUT"]
 
 # SQL Query
 def execute_query(query, params=(), fetch=False):
