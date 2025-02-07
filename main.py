@@ -46,7 +46,7 @@ def get_db_connection():
 # Server Config
 HOST = IP_CONFIG["HOST"]
 PORT = IP_CONFIG["PORT"]
-TIMEOUT = 120
+TIMEOUT = 5
 
 # SQL Query
 def execute_query(query, params=(), fetch=False):
@@ -128,21 +128,16 @@ def handle_client(client_socket, client_addr):
             data = client_socket.recv(1024).decode("utf-8", errors="replace")
             if not data:
                 break
-<<<<<<< HEAD
             buffer += data
 
 
             while "\n" in buffer:
                 command, buffer = buffer.split("\n", 1)
                 command = command.strip()
-
-=======
-
             buffer += data
             while "\n" in buffer:
                 command, buffer = buffer.split("\n", 1)
                 command = command.strip()
->>>>>>> 2a712f2aaff3b8296e7b1cadd55264fc0dfc2fbd
                 if command:
                     handle_command(command, client_socket, client_addr[0])
     except Exception as e:
