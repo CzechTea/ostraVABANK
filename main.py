@@ -3,7 +3,6 @@ import sys
 import logging
 import socket
 import json
-
 from threading import Thread
 
 # Instalce chybějících balíčků, primarně pyodbc
@@ -27,9 +26,13 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-# Načtení databázeové konfigurace "config.json"
-with open("config.json") as f:
+# Načtení databázové konfigurace "config.json"
+with open("db_config.json") as f:
     DB_CONFIG = json.load(f)
+
+# Načtení IP konfigurace "ip_config.json"
+with open("ip_config.json") as f:
+    IP_CONFIG = json.load(f)
 
 # Připojení k databázi
 def get_db_connection():
@@ -41,8 +44,8 @@ def get_db_connection():
         return None
 
 # Server Config
-HOST = "192.168.2.3"
-PORT = 65432
+HOST = IP_CONFIG["HOST"]
+PORT = IP_CONFIG["PORT"]
 TIMEOUT = 120
 
 # SQL Query
@@ -116,7 +119,6 @@ def handle_command(command, client_socket, client_ip):
     logging.info(f"{client_ip} použil příkaz: {command.strip()} -> Odpověď zní: {response}")
 
 # Proces klienta
-# Proces klienta (Fix: Read full command lines from PuTTY)
 def handle_client(client_socket, client_addr):
     try:
         client_socket.settimeout(TIMEOUT)
@@ -125,24 +127,20 @@ def handle_client(client_socket, client_addr):
         while True:
             data = client_socket.recv(1024).decode("utf-8", errors="replace")
             if not data:
-                break  # Client disconnected
+                break
 
-            buffer += data  # Append new data to the buffer
-
-            # Process full commands (PuTTY sends one char at a time, so we wait for newline)
+            buffer += data
             while "\n" in buffer:
-                command, buffer = buffer.split("\n", 1)  # Take first command, keep the rest
-                command = command.strip()  # Remove extra spaces/newlines
-
-                if command:  # Ensure non-empty command
+                command, buffer = buffer.split("\n", 1)
+                command = command.strip()
+                if command:
                     handle_command(command, client_socket, client_addr[0])
     except Exception as e:
         logging.warning(f"Chyba při komunikaci s klientem {client_addr[0]}: {str(e)}")
     finally:
         client_socket.close()
-        print(f"Spojení s {client_addr[0]} ukončeno.")
+        print(f"Spojení s {client_addr[0]} bylo ukončeno.")
         logging.warning(f"{client_addr[0]} ukončil spojení.")
-
 
 # Spuštění serveru
 def start_server():
@@ -159,10 +157,7 @@ def start_server():
         client_socket, addr = server.accept()
         logging.info(f"Připojen klient: {addr}")
         print(f"Nový klient: {addr}")
-        # Každý klient má svoje vlákno.
         Thread(target=handle_client, args=(client_socket, addr)).start()
 
-
-# nesahat, díky
 if __name__ == "__main__":
     start_server()
