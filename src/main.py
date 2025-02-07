@@ -21,17 +21,17 @@ import pyodbc
 
 # Konfigurace Loggování
 logging.basicConfig(
-    filename="bank_log.log",
+    filename="../log/bank_log.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
 # Načtení databázové konfigurace "config.json"
-with open("db_config.json") as f:
+with open("../config/db_config.json") as f:
     DB_CONFIG = json.load(f)
 
 # Načtení IP konfigurace "ip_config.json"
-with open("ip_config.json") as f:
+with open("../config/ip_config.json") as f:
     IP_CONFIG = json.load(f)
 
 # Připojení k databázi
