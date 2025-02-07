@@ -1,5 +1,5 @@
 {
-    "SERVER": "localhost",
+    "SERVER": "SCRATSERVER",
     "DATABASE": "ostraVABANK",
     "USERNAME": "sa",
     "PASSWORD": "student"

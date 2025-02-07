@@ -1,8 +1,40 @@
-import socket
-import pyodbc
+import subprocess
+import sys
+
+
+required_packages = ["socket","pyodbc", "threading", "logging", "json"]
+
+def install_missing_packages(packages):
+    # Check whenever a package is properly installed.
+    for package in packages:
+        try:
+            __import__(package)
+        except ImportError:
+            print(f"{package} není nainstalován, instaluji...")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install_missing_packages(required_packages)
+
+import logging, socket, json, pyodbc
 from threading import Thread
-import logging
-import json
+
+def start_server():
+    try:
+        logging.info("Spouští se server...")
+        server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        server.bind((HOST, PORT))
+        server.listen(60)
+        get_db_connection()
+        logging.info(f"Server naslouchá na {HOST}:{PORT}")
+    except Exception as e:
+        logging.error(f"Chyba při spouštění serveru: {str(e)}")
+
+    print("Bankovní systém ostraVABANK úspěšně spuštěn")
+    print(f"Server naslouchá na {HOST}:{PORT}")
+    while True:
+        client_socket, client_ip = server.accept()
+        logging.info(f"Připojen klient: {client_ip}")
+        Thread(target=handle_client, args=(client_socket,client_ip)).start()
 
 # Logging Configuration
 logging.basicConfig(
@@ -121,23 +153,7 @@ def handle_client(client_socket, client_ip):
         client_socket.close()
 
 # Start Server
-def start_server():
-    try:
-        logging.info("Spouští se server...")
-        server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server.bind((HOST, PORT))
-        server.listen(60)
-        get_db_connection()
-        logging.info(f"Server naslouchá na {HOST}:{PORT}")
-    except Exception as e:
-        logging.error(f"Chyba při spouštění serveru: {str(e)}")
 
-    print("Bankovní systém ostraVABANK úspěšně spuštěn")
-    print(f"Server naslouchá na {HOST}:{PORT}")
-    while True:
-        client_socket, client_ip = server.accept()
-        logging.info(f"Připojen klient: {client_ip}")
-        Thread(target=handle_client, args=(client_socket,client_ip)).start()
 
 if __name__ == "__main__":
     start_server()
