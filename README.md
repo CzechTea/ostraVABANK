@@ -91,22 +91,39 @@ Hit enter.
 ## Sources
 
 https://stackoverflow.com/questions/42339876/error-unicodedecodeerror-utf-8-codec-cant-decode-byte-0xff-in-position-0-in
+
 https://stackoverflow.com/questions/1334012/cannot-insert-explicit-value-for-identity-column-in-table-table-when-identity
+
 https://stackoverflow.com/questions/46419607/how-to-automatically-install-required-packages-from-a-python-script-as-necessary
+
 https://stackoverflow.com/questions/39261659/how-to-send-and-receive-newline-character-over-sockets-in-a-client-server-model
+
 https://stackoverflow.com/questions/33725862/connecting-to-microsoft-sql-server-using-python
+
 https://stackoverflow.com/questions/43330897/oserror-winerror-10022-an-invalid-argument-was-supplied-windows-10-python
+
 https://stackoverflow.com/questions/33932508/string-indexing-why-s00-works-and-s11-fails
+
 https://stackoverflow.com/questions/11451101/retrieving-data-from-sql-using-pyodbc
+
 https://stackoverflow.com/questions/3432102/python-socket-connection-timeout
+
 https://www.geeksforgeeks.org/logging-in-python/
+
 https://stackoverflow.com/questions/19078170/how-would-you-save-a-simple-settings-configuration-file-in-python
+
 https://chatgpt.com/share/67a649f8-c6fc-800a-a931-979d6533bcbd
+
 https://chatgpt.com/share/67a64a75-6f44-800a-b365-3b37a41ee402
+
 https://chatgpt.com/share/67a64c5a-0b5c-800a-aec5-7689260eb7fe
+
 https://realpython.com/intro-to-python-threading/
+
 https://stackoverflow.com/questions/69923217/what-exactly-is-the-purpose-of-setsockopt
+
 https://www.youtube.com/watch?v=eDXX5evRgQw&pp=ygUGcHlvZGJj
+
 Reused code can be found in folder *reused*.
 
 
