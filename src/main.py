@@ -115,10 +115,13 @@ def handle_command(command, client_socket, client_ip):
         response = "ER Neznámý příkaz."
         logging.error(f"Chyba: {str(e)}")
 
-    client_socket.send(response.encode("utf-8"))
+
+    client_socket.send((response + "\n").encode("utf-8"))
     logging.info(f"{client_ip} použil příkaz: {command.strip()} -> Odpověď zní: {response}")
 
+
 # Proces klienta
+# Proces klienta (Fix: Read full command lines from PuTTY)
 def handle_client(client_socket, client_addr):
     try:
         client_socket.settimeout(TIMEOUT)
@@ -127,24 +130,22 @@ def handle_client(client_socket, client_addr):
         while True:
             data = client_socket.recv(1024).decode("utf-8", errors="replace")
             if not data:
-                break
-            buffer += data
+                break  # Client disconnected
 
+            buffer += data  # Append new data to the buffer
 
+            # Process full commands (PuTTY sends one char at a time, so we wait for newline)
             while "\n" in buffer:
-                command, buffer = buffer.split("\n", 1)
-                command = command.strip()
-            buffer += data
-            while "\n" in buffer:
-                command, buffer = buffer.split("\n", 1)
-                command = command.strip()
-                if command:
+                command, buffer = buffer.split("\n", 1)  # Take first command, keep the rest
+                command = command.strip()  # Remove extra spaces/newlines
+
+                if command:  # Ensure non-empty command
                     handle_command(command, client_socket, client_addr[0])
     except Exception as e:
         logging.warning(f"Chyba při komunikaci s klientem {client_addr[0]}: {str(e)}")
     finally:
         client_socket.close()
-        print(f"Spojení s {client_addr[0]} bylo ukončeno.")
+        print(f"Spojení s {client_addr[0]} ukončeno.")
         logging.warning(f"{client_addr[0]} ukončil spojení.")
 
 # Spuštění serveru
