@@ -1,6 +1,6 @@
 {
-    "SERVER": "SCRATSERVER",
-    "DATABASE": "ostraVABANK",
-    "USERNAME": "sa",
-    "PASSWORD": "student"
+    "SERVER": "server",
+    "DATABASE": "database",
+    "USERNAME": "username",
+    "PASSWORD": "password"
 }
