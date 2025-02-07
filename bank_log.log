@@ -1,79 +1,32 @@
-2025-02-06 17:53:00,593 - INFO - SpouÅ¡tÃ­ se server
-2025-02-06 17:53:03,018 - INFO - SpouÅ¡tÃ­ se server
-2025-02-06 17:53:20,266 - INFO - SpouÅ¡tÃ­ se server
-2025-02-06 17:53:20,266 - INFO - Server naslouchÃ¡ na 192.168.1.23:65525
-2025-02-06 17:53:56,258 - INFO - PÅ™ipojen klient: ('192.168.1.23', 50738)
-2025-02-06 17:54:08,994 - INFO - PÅ™ipojen klient: ('192.168.1.23', 50746)
-2025-02-06 17:54:10,117 - INFO - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50746)> pouÅ¾il pÅ™Ã­kaz: AC -> OdpovÄ›Ä: AC 10000/192.168.1.23
-2025-02-06 17:54:11,552 - INFO - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50738)> pouÅ¾il pÅ™Ã­kaz: AC -> OdpovÄ›Ä: AC 10001/192.168.1.23
-2025-02-06 17:54:14,992 - INFO - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50746)> pouÅ¾il pÅ™Ã­kaz: AD -> OdpovÄ›Ä: ER NeznÃ¡mÃ½ pÅ™Ã­kaz
-2025-02-06 17:54:17,876 - INFO - <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50746)> pouÅ¾il pÅ™Ã­kaz: AD -> OdpovÄ›Ä: ER NeznÃ¡mÃ½ pÅ™Ã­kaz
-2025-02-06 17:54:19,515 - INFO - <socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.23', 65525), raddr=('192.168.1.23', 50738)> pouÅ¾il pÅ™Ã­kaz: AD -> OdpovÄ›Ä: ER NeznÃ¡mÃ½ pÅ™Ã­kaz
-2025-02-07 14:38:23,950 - INFO - Spouï¿½tï¿½ se server...
-2025-02-07 14:38:23,951 - ERROR - Chyba pï¿½i spouï¿½tï¿½nï¿½ serveru: [WinError 10049] Poï¿½adovanï¿½ adresa nenï¿½ v tomto kontextu platnï¿½
-2025-02-07 14:44:32,513 - INFO - Spouï¿½tï¿½ se server...
-2025-02-07 14:44:32,514 - ERROR - Chyba pï¿½i spouï¿½tï¿½nï¿½ serveru: [WinError 10049] Poï¿½adovanï¿½ adresa nenï¿½ v tomto kontextu platnï¿½
-2025-02-07 14:48:05,430 - INFO - Spouï¿½tï¿½ se server...
-2025-02-07 14:48:05,432 - ERROR - Chyba pï¿½i spouï¿½tï¿½nï¿½ serveru: [WinError 10049] Poï¿½adovanï¿½ adresa nenï¿½ v tomto kontextu platnï¿½
-2025-02-07 14:54:22,589 - INFO - Spouï¿½tï¿½ se server...
-2025-02-07 14:54:44,656 - INFO - Spouï¿½tï¿½ se server...
-2025-02-07 14:55:03,155 - ERROR - Chyba pï¿½i spouï¿½tï¿½nï¿½ serveru: ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server neexistuje nebo byl odepï¿½en pï¿½ï¿½stup. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
-2025-02-07 14:55:30,646 - INFO - Pï¿½ipojen klient: ('127.0.0.1', 59431)
-2025-02-07 14:55:30,660 - INFO - ('127.0.0.1', 59431) pouï¿½il pï¿½ï¿½kaz: SSH-2.0-PuTTY_Release_0.82 -> Odpovï¿½ï¿½ znï¿½: ER Neznï¿½mï¿½ pï¿½ï¿½kaz.
-2025-02-07 14:56:59,148 - INFO - Spouï¿½tï¿½ se server...
-2025-02-07 14:57:00,959 - INFO - Server naslouchï¿½ na 0.0.0.0:65525
-2025-02-07 14:57:19,818 - INFO - Pï¿½ipojen klient: ('127.0.0.1', 59443)
-2025-02-07 14:57:19,829 - INFO - ('127.0.0.1', 59443) pouï¿½il pï¿½ï¿½kaz: SSH-2.0-PuTTY_Release_0.82 -> Odpovï¿½ï¿½ znï¿½: ER Neznï¿½mï¿½ pï¿½ï¿½kaz.
-2025-02-07 15:02:22,237 - INFO - Spouští se server...
-2025-02-07 15:02:24,451 - INFO - Server naslouchá na 0.0.0.0:65525
-2025-02-07 15:03:54,380 - INFO - Spouští se server...
-2025-02-07 15:03:55,536 - INFO - Server naslouchá na 192.168.2.3:65530
-2025-02-07 15:04:10,269 - INFO - Pøipojen klient: ('192.168.2.3', 59484)
-2025-02-07 15:04:10,281 - INFO - ('192.168.2.3', 59484) pouil pøíkaz: SSH-2.0-PuTTY_Release_0.82 -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:06:10,287 - WARNING - Chyba pøi komunikaci s klientem ('192.168.2.3', 59484): timed out
-2025-02-07 15:20:00,470 - INFO - Server naslouchá na 192.168.2.3:65432
-2025-02-07 15:20:34,654 - INFO - Server naslouchá na 192.168.2.3:65432
-2025-02-07 15:20:40,073 - INFO - Server naslouchá na 192.168.2.3:65432
-2025-02-07 15:21:04,219 - INFO - Server naslouchá na 192.168.2.3:65432
-2025-02-07 15:23:01,806 - INFO - Server naslouchá na 192.168.2.3:65432
-2025-02-07 15:23:35,440 - INFO - Server naslouchá na 192.168.2.3:65432
-2025-02-07 15:25:05,782 - INFO - Spouští se server...
-2025-02-07 15:25:05,783 - INFO - Server naslouchá na 192.168.2.3:65432
-2025-02-07 15:25:20,370 - INFO - Spouští se server...
-2025-02-07 15:25:20,371 - INFO - Server naslouchá na 192.168.2.3:65432
-2025-02-07 15:25:44,275 - INFO - Pøipojen klient: ('192.168.2.3', 59565)
-2025-02-07 15:25:44,288 - INFO - 192.168.2.3 pouil pøíkaz: SSH-2.0-PuTTY_Release_0.82 -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:28:16,653 - INFO - Spouští se server...
-2025-02-07 15:28:16,654 - INFO - Server naslouchá na 192.168.2.3:65432
-2025-02-07 15:28:45,453 - INFO - Pøipojen klient: ('192.168.2.3', 59602)
-2025-02-07 15:28:45,464 - INFO - 192.168.2.3 pouil pøíkaz: SSH-2.0-PuTTY_Release_0.82 -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:39:36,347 - INFO - Spouští se server...
-2025-02-07 15:39:36,349 - INFO - Server naslouchá na 192.168.2.3:65432
-2025-02-07 15:40:02,360 - INFO - Pøipojen klient: ('192.168.2.3', 59683)
-2025-02-07 15:40:11,654 - WARNING - 192.168.2.3 pouil pøíkaz: BC -> Odpovìï zní: BC 192.168.2.3
-2025-02-07 15:40:11,655 - WARNING - 192.168.2.3 pouil pøíkaz:  -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:40:18,909 - WARNING - 192.168.2.3 pouil pøíkaz: B -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:40:18,910 - WARNING - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:40:21,467 - WARNING - 192.168.2.3 pouil pøíkaz:  -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:40:22,109 - WARNING - 192.168.2.3 pouil pøíkaz:  -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:40:23,105 - WARNING - 192.168.2.3 pouil pøíkaz: B -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:40:23,106 - WARNING - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:40:27,401 - WARNING - 192.168.2.3 pouil pøíkaz: B -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:40:27,402 - WARNING - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:51:56,883 - INFO - Spouští se server...
-2025-02-07 15:51:56,884 - INFO - Server naslouchá na 192.168.2.3:65432
-2025-02-07 15:52:06,428 - INFO - Pøipojen klient: ('192.168.2.3', 59717)
-2025-02-07 15:52:10,825 - WARNING - 192.168.2.3 pouil pøíkaz: A -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:10,825 - WARNING - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:12,730 - WARNING - 192.168.2.3 pouil pøíkaz:  -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:15,158 - WARNING - 192.168.2.3 pouil pøíkaz: A -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:15,158 - WARNING - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:15,982 - WARNING - 192.168.2.3 pouil pøíkaz: A -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:15,982 - WARNING - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:16,516 - WARNING - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:16,516 - WARNING - 192.168.2.3 pouil pøíkaz: A -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:17,639 - WARNING - 192.168.2.3 pouil pøíkaz: c -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:19,970 - ERROR - Chyba: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Cannot insert explicit value for identity column in table 'Accounts' when IDENTITY_INSERT is set to OFF. (544) (SQLExecDirectW)")
-2025-02-07 15:52:20,051 - WARNING - 192.168.2.3 pouil pøíkaz: ac -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:24,044 - WARNING - 192.168.2.3 pouil pøíkaz: B -> Odpovìï zní: ER Neznámı pøíkaz.
-2025-02-07 15:52:24,045 - WARNING - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:37:54,055 - INFO - Spouští se server...
+2025-02-07 16:37:54,056 - INFO - Server naslouchá na 192.168.2.3:65432
+2025-02-07 16:38:27,519 - INFO - Pøipojen klient: ('192.168.2.3', 59917)
+2025-02-07 16:38:29,160 - INFO - 192.168.2.3 pouil pøíkaz: BC -> Odpovìï zní: BC 192.168.2.3°
+2025-02-07 16:38:29,160 - INFO - 192.168.2.3 pouil pøíkaz:  -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:38:31,695 - INFO - 192.168.2.3 pouil pøíkaz: B -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:38:31,696 - INFO - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:38:35,797 - WARNING - 192.168.2.3 ukonèil spojení.
+2025-02-07 16:40:14,087 - INFO - Pøipojen klient: ('192.168.2.3', 59922)
+2025-02-07 16:44:37,341 - INFO - Spouští se server...
+2025-02-07 16:44:37,343 - INFO - Server naslouchá na 192.168.2.3:65432
+2025-02-07 16:45:04,359 - INFO - Pøipojen klient: ('192.168.2.1', 63375)
+2025-02-07 16:45:06,563 - INFO - 192.168.2.1 pouil pøíkaz: BC -> Odpovìï zní: BC 192.168.2.3
+2025-02-07 16:45:08,729 - INFO - 192.168.2.1 pouil pøíkaz: Bc -> Odpovìï zní: BC 192.168.2.3
+2025-02-07 16:45:10,547 - INFO - 192.168.2.1 pouil pøíkaz: Bc -> Odpovìï zní: BC 192.168.2.3
+2025-02-07 16:46:17,142 - INFO - Pøipojen klient: ('192.168.2.3', 59946)
+2025-02-07 16:46:19,185 - INFO - 192.168.2.3 pouil pøíkaz: B -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:46:19,186 - INFO - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:46:25,761 - WARNING - 192.168.2.3 ukonèil spojení.
+2025-02-07 16:47:10,557 - WARNING - Chyba pøi komunikaci s klientem 192.168.2.1: timed out
+2025-02-07 16:47:10,557 - WARNING - 192.168.2.1 ukonèil spojení.
+2025-02-07 16:50:35,243 - INFO - Pøipojen klient: ('192.168.2.3', 59967)
+2025-02-07 16:50:35,257 - INFO - 192.168.2.3 pouil pøíkaz: SSH-2.0-PuTTY_Release_0.82 -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:50:42,110 - WARNING - 192.168.2.3 ukonèil spojení.
+2025-02-07 16:52:22,802 - INFO - Pøipojen klient: ('192.168.2.3', 59970)
+2025-02-07 16:52:24,482 - INFO - 192.168.2.3 pouil pøíkaz: B -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:52:24,485 - INFO - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:52:26,216 - INFO - 192.168.2.3 pouil pøíkaz: B -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:52:26,223 - INFO - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:52:26,828 - INFO - 192.168.2.3 pouil pøíkaz: B -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:52:26,836 - INFO - 192.168.2.3 pouil pøíkaz: C -> Odpovìï zní: ER Neznámı pøíkaz.
+2025-02-07 16:52:52,330 - WARNING - 192.168.2.3 ukonèil spojení.
