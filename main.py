@@ -5,7 +5,7 @@ import socket
 import json
 from threading import Thread
 
-# Instalce chybějících balíčků, primarně pyodbc
+# Instalce chybějících balíčků, primárně pyodbc
 required_packages = ["pyodbc"]
 def install_missing_packages(packages):
     for package in packages:
@@ -26,7 +26,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-# Načtení databázové konfigurace "config.json"
+# Načtení databázové konfigurace "db_config.json"
 with open("db_config.json") as f:
     DB_CONFIG = json.load(f)
 
