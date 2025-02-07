@@ -30,3 +30,9 @@
 2025-02-07 16:52:26,828 - INFO - 192.168.2.3 použil pøíkaz: B -> Odpovìï zní: ER Neznámý pøíkaz.
 2025-02-07 16:52:26,836 - INFO - 192.168.2.3 použil pøíkaz: C -> Odpovìï zní: ER Neznámý pøíkaz.
 2025-02-07 16:52:52,330 - WARNING - 192.168.2.3 ukonèil spojení.
+2025-02-07 16:55:28,345 - INFO - Spouští se server...
+2025-02-07 16:55:28,346 - INFO - Server naslouchá na 192.168.2.3:65432
+2025-02-07 16:55:46,207 - INFO - Pøipojen klient: ('192.168.2.3', 59976)
+2025-02-07 16:55:48,411 - INFO - 192.168.2.3 použil pøíkaz: BC -> Odpovìï zní: BC 192.168.2.3
+2025-02-07 16:55:59,772 - INFO - 192.168.2.3 použil pøíkaz: AC -> Odpovìï zní: AC 10001/192.168.2.3
+2025-02-07 16:56:55,864 - WARNING - 192.168.2.3 ukonèil spojení.
