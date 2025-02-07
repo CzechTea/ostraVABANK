@@ -23,7 +23,7 @@ def start_server():
         logging.info("Spouští se server...")
         server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server.bind((HOST, PORT))
-        server.listen(60)
+        server.listen(5)
         get_db_connection()
         logging.info(f"Server naslouchá na {HOST}:{PORT}")
     except Exception as e:
