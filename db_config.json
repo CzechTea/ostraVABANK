@@ -1,6 +1,6 @@
 {
-    "SERVER": "193.85.203.188",
-    "DATABASE": "kocovsky2",
-    "USERNAME": "kocovsky2",
-    "PASSWORD": "vitkovice"
+    "SERVER": "server",
+    "DATABASE": "database",
+    "USERNAME": "username",
+    "PASSWORD": "password"
 }

@@ -5,7 +5,7 @@ import socket
 import json
 from threading import Thread
 
-# Instalce chybějících balíčků, primárně pyodbc
+# Instalce chybějících balíčků, primarně pyodbc
 required_packages = ["pyodbc"]
 def install_missing_packages(packages):
     for package in packages:
@@ -26,7 +26,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-# Načtení databázové konfigurace "db_config.json"
+# Načtení databázové konfigurace "config.json"
 with open("db_config.json") as f:
     DB_CONFIG = json.load(f)
 
@@ -128,11 +128,21 @@ def handle_client(client_socket, client_addr):
             data = client_socket.recv(1024).decode("utf-8", errors="replace")
             if not data:
                 break
+<<<<<<< HEAD
+            buffer += data
+
+
+            while "\n" in buffer:
+                command, buffer = buffer.split("\n", 1)
+                command = command.strip()
+
+=======
 
             buffer += data
             while "\n" in buffer:
                 command, buffer = buffer.split("\n", 1)
                 command = command.strip()
+>>>>>>> 2a712f2aaff3b8296e7b1cadd55264fc0dfc2fbd
                 if command:
                     handle_command(command, client_socket, client_addr[0])
     except Exception as e:
