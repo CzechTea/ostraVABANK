@@ -24,7 +24,7 @@ This project is a simple P2P bank system server application designed to interact
 ## Requirements
 
 - Python 3.x
-- pyodbc
+- pyodbc (Will be automatically installed if it´s missing)
 - SQL Server database (preferably Microsoft SQL Server)
 - Computer (Windows, macOS, Linux) (Who would have thought)
 - Internet
@@ -76,7 +76,7 @@ The server will begin listening on the specified IP and port.
 
 Download PuTTY from their website -> https://www.putty.org/
 
-After downloading it, open it and type the IP Address and port of your server. From Connection Type. Click Other: RAW
+After downloading it, open it and type the IP Address and port of your server. From Connection Type click Other: RAW
 
 Click Open
 
