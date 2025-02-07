@@ -121,7 +121,6 @@ def handle_command(command, client_socket, client_ip):
 
 
 # Proces klienta
-# Proces klienta (Fix: Read full command lines from PuTTY)
 def handle_client(client_socket, client_addr):
     try:
         client_socket.settimeout(TIMEOUT)
@@ -130,16 +129,15 @@ def handle_client(client_socket, client_addr):
         while True:
             data = client_socket.recv(1024).decode("utf-8", errors="replace")
             if not data:
-                break  # Client disconnected
+                break  #
 
-            buffer += data  # Append new data to the buffer
+            buffer += data  #
 
-            # Process full commands (PuTTY sends one char at a time, so we wait for newline)
             while "\n" in buffer:
-                command, buffer = buffer.split("\n", 1)  # Take first command, keep the rest
-                command = command.strip()  # Remove extra spaces/newlines
+                command, buffer = buffer.split("\n", 1)
+                command = command.strip()
 
-                if command:  # Ensure non-empty command
+                if command:
                     handle_command(command, client_socket, client_addr[0])
     except Exception as e:
         logging.warning(f"Chyba při komunikaci s klientem {client_addr[0]}: {str(e)}")
